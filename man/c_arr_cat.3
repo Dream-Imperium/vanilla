@@ -1,0 +1,33 @@
+.Dd $Mdocdate: December 20 2019 $
+.Dt C_ARR_CAT 3
+.Os
+.Sh NAME
+.Nm c_arr_cat
+.Nd concatenate objects in an array
+.Sh LIBRARY
+.Lb vanilla
+.Sh SYNOPSIS
+.In vanilla/cpu.h
+.In vanilla/std.h
+.Ft ctype_status
+.Fn c_arr_cat "ctype_arr *p" "void *v" "usize m" "usize n"
+.Sh DESCRIPTION
+The
+.Fn c_arr_cat
+function appends
+.Fa m
+objects, each
+.Fa n
+bytes in size, from the memory area
+.Fa v
+to the array
+.Fa p .
+.Sh RETURN VALUES
+.Rv -std
+.Sh ERRORS
+.Bl -tag -width Er
+.It Bq Er C_ENOMEM
+Not enough space.
+.It Bq Er C_EOVERFLOW
+Value too large to be stored in data type.
+.El

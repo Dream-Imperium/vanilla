@@ -1,0 +1,19 @@
+.Dd $Mdocdate: December 20 2019 $
+.Dt C_DYN_SHRINK
+.Os
+.Sh NAME
+.Nm c_dyn_shrink
+.Nd shrink a dynamic array
+.Sh LIBRARY
+.Lb vanilla
+.Sh SYNOPSIS
+.In vanilla/cpu.h
+.In vanilla/std.h
+.Ft void
+.Fn c_dyn_shrink "ctype_arr *p"
+.Sh DESCRIPTION
+The
+.Fn c_dyn_shrink
+function shrinks the internal buffer of array
+.Fa p
+to the number of initialized bytes.

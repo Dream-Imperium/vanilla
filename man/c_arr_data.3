@@ -1,0 +1,24 @@
+.Dd $Mdocdate: December 20 2019 $
+.Dt C_ARR_DATA 3
+.Os
+.Sh NAME
+.Nm c_arr_data
+.Nd returns pointer to an array internal buffer
+.Sh LIBRARY
+.Lb vanilla
+.Sh SYNOPSIS
+.In vanilla/cpu.h
+.In vanilla/std.h
+.Ft void *
+.Fn c_arr_data "ctype_arr *p"
+.Sh DESCRIPTION
+The
+.Fn c_arr_data
+function returns a pointer to the internal buffer of array
+.Fa p .
+.Sh RETURN VALUES
+The
+.Fn c_arr_data
+function returns a pointer to the internal buffer of the given array.
+.Sh SEE ALSO
+.Xr c_arr_get 3

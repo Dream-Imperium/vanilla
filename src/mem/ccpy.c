@@ -1,0 +1,23 @@
+#include <vanilla/cpu.h>
+#include <vanilla/std.h>
+
+void *
+c_mem_ccpy(void *d, usize n, void *s, int c)
+{
+	uchar *s1, *s2;
+
+	s1 = d;
+	s2 = s;
+	if (s > d) {
+		for (; n; --n)
+			if ((*s1++ = *s2++) == c)
+				return s1;
+	} else {
+		s1 += n - 1;
+		s2 += n - 1;
+		for (; n; --n)
+			if ((*s1-- = *s2--) == c)
+				return s1;
+	}
+	return nil;
+}

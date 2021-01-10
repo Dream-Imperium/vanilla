@@ -1,0 +1,8 @@
+#include <vanilla/cpu.h>
+#include <vanilla/std.h>
+
+void
+c_adt_lfree(ctype_node *np)
+{
+	c_std_free(np);
+}

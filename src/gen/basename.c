@@ -1,0 +1,24 @@
+#include <vanilla/cpu.h>
+#include <vanilla/std.h>
+
+char *
+c_gen_basename(char *s)
+{
+	usize n;
+	char *p;
+
+	if (!s || !*s)
+		return ".";
+
+	n = c_str_len(s, C_USIZEMAX);
+	if (!--n)
+		return s;
+
+	for (; s[n] == '/'; --n) ;
+	s[n + 1] = 0;
+
+	if (!(p = c_mem_rchr(s, n, '/')))
+		return s;
+
+	return ++p;
+}
